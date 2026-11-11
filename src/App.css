@@ -1,0 +1,831 @@
+
+/* ===================================
+   MASALA'S NAIL STUDIO
+   Mobile-First Website
+=================================== */
+
+:root {
+  --cream: #fff8f3;
+  --soft-pink: #fff0f4;
+  --blush: #f6dce5;
+  --rose: #c43770;
+  --dark-rose: #9f2454;
+  --burgundy: #4c142a;
+  --muted: #896f7a;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--rose);
+  outline-offset: 4px;
+}
+
+.app {
+  min-height: 100vh;
+  color: var(--burgundy);
+}
+
+/* ===================================
+   NAVIGATION
+=================================== */
+
+.navbar {
+  width: 100%;
+  padding: 14px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  z-index: 20;
+  background: var(--cream);
+  border-bottom: 1px solid #f2dce3;
+}
+
+/* Official logo */
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logo-image {
+  display: block;
+  width: 135px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hamburger button */
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  background: transparent;
+  border: none;
+  color: var(--dark-rose);
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Mobile navigation */
+
+.nav-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: 25px 6%;
+  background: var(--cream);
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  box-shadow: 0 10px 20px rgba(76, 20, 42, 0.08);
+}
+
+.nav-links.open {
+  display: flex;
+}
+
+.nav-links a {
+  display: block;
+  color: var(--dark-rose);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 12px 4px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--rose);
+}
+
+/* Highlight Book Now */
+
+.nav-links a[href="#booking"] {
+  background: var(--rose);
+  color: white;
+  padding: 13px 22px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(196, 55, 112, 0.18);
+}
+
+.nav-links a[href="#booking"]:hover {
+  background: var(--dark-rose);
+  color: white;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+.hero {
+  min-height: 75vh;
+  padding: 80px 24px;
+  background: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1150px;
+}
+
+/* Bow decoration */
+
+.bow-decoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.bow-line {
+  width: 55px;
+  height: 1px;
+  background: #d99aac;
+}
+
+.bow-icon {
+  font-size: 40px;
+}
+
+/* Welcome text */
+
+.eyebrow {
+  color: #97536b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  line-height: 1.8;
+  margin: 0 0 30px;
+}
+
+/* Main heading */
+
+.hero h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(38px, 9vw, 82px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--burgundy);
+  margin: 0 0 28px;
+}
+
+.hero h1 span {
+  color: var(--rose);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Description */
+
+.hero-description {
+  font-size: clamp(15px, 2vw, 20px);
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 750px;
+  margin: 0 auto 32px;
+}
+
+/* Primary buttons */
+
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 30px;
+  background: var(--rose);
+  color: var(--white);
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(196, 55, 112, 0.2);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.primary-button:hover {
+  background: var(--dark-rose);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   GENERAL SECTIONS
+=================================== */
+
+.content-section {
+  padding: 80px 24px;
+  text-align: center;
+  scroll-margin-top: 20px;
+}
+
+.content-section h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 6vw, 48px);
+  font-weight: 400;
+  color: var(--dark-rose);
+  margin: 15px 0 25px;
+}
+
+.content-section > p:not(.section-label) {
+  max-width: 650px;
+  margin: 0 auto 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: var(--rose);
+}
+
+.section-bow {
+  display: block;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.coming-soon {
+  font-style: italic;
+  color: var(--rose) !important;
+}
+
+/* ===================================
+   ABOUT MASALA
+=================================== */
+
+.about {
+  background: var(--soft-pink);
+}
+
+/* ===================================
+   SERVICES
+=================================== */
+
+.services {
+  background: var(--cream);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  max-width: 1100px;
+  margin: 45px auto 0;
+}
+
+.service-card {
+  padding: 35px 25px;
+  background: var(--white);
+  border: 1px solid #f3d9e2;
+  border-radius: 18px;
+  box-shadow: 0 5px 18px rgba(76, 20, 42, 0.04);
+}
+
+.service-card h3 {
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 400;
+  color: var(--dark-rose);
+  margin: 0 0 15px;
+}
+
+.service-card p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+/* ===================================
+   SPECIALS
+=================================== */
+
+.specials {
+  background: var(--soft-pink);
+}
+
+/* ===================================
+   GALLERY
+=================================== */
+
+.gallery {
+  background: var(--cream);
+}
+
+/* ===================================
+   BOOKING
+=================================== */
+
+.booking {
+  background: var(--soft-pink);
+}
+
+.booking .primary-button {
+  margin-top: 15px;
+}
+
+/* ===================================
+   CONTACT
+=================================== */
+
+.contact {
+  background: var(--cream);
+}
+
+.contact-link {
+  display: inline-block;
+  color: var(--dark-rose);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rose);
+  padding-bottom: 5px;
+}
+
+.contact-link:hover {
+  color: var(--rose);
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+
+.footer {
+  padding: 25px 20px;
+  background: #f4dce4;
+  text-align: center;
+}
+
+.footer p {
+  font-size: 12px;
+  color: var(--dark-rose);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (min-width: 600px) {
+  .logo-image {
+    width: 165px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===================================
+   DESKTOP
+=================================== */
+
+@media (min-width: 1100px) {
+  .navbar {
+    padding: 15px 5%;
+    gap: 30px;
+  }
+
+  .logo-image {
+    width: 220px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: clamp(12px, 1.5vw, 26px);
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .nav-links a[href="#booking"] {
+    padding: 13px 22px;
+  }
+
+  .hero {
+    min-height: 75vh;
+    padding: 100px 5%;
+  }
+
+  .bow-line {
+    width: 100px;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .content-section {
+    padding: 100px 6%;
+  }
+}
+
+/* ===================================
+   SMALL MOBILE SCREENS
+=================================== */
+
+@media (max-width: 399px) {
+  .logo-image {
+    width: 115px;
+  }
+
+  .hero {
+    padding: 65px 20px;
+  }
+
+  .hero h1 {
+    font-size: 37px;
+  }
+
+  .eyebrow {
+    letter-spacing: 2px;
+  }
+
+  .primary-button {
+    font-size: 14px;
+    padding: 15px 24px;
+  }
+}
+
+/* Reduced motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .primary-button {
+    transition: none;
+  }
+}
+
+/* ===== MOBILE LAYOUT REFINEMENTS ===== */
+
+@media (max-width: 599px) {
+
+  /* Navigation */
+  .navbar {
+    padding: 18px 20px;
+    min-height: 110px;
+  }
+
+  /* Logo */
+  .logo-image {
+    width: 125px;
+    height: auto;
+  }
+
+  /* Homepage */
+  .hero {
+    min-height: auto;
+    padding: 45px 20px 65px;
+  }
+
+  /* Bow */
+  .bow-decoration {
+    margin-bottom: 20px;
+  }
+
+  .bow-icon {
+    font-size: 36px;
+  }
+
+  .bow-line {
+    width: 45px;
+  }
+
+  /* Welcome message */
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+  }
+
+  /* Main heading */
+  .hero h1 {
+    font-size: clamp(36px, 9vw, 44px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+  }
+
+  /* Description */
+  .hero-description {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  /* Button */
+  .primary-button {
+    font-size: 14px;
+    padding: 15px 25px;
+  }
+}
+
+/* Satin bow decorations */
+
+.satin-bow {
+  width: 110px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.section-satin-bow {
+  display: block;
+  width: 65px;
+  height: auto;
+  margin: 0 auto 20px;
+}
+
+/* Mobile */
+@media (max-width: 599px) {
+  .satin-bow {
+    width: 80px;
+  }
+
+  .section-satin-bow {
+    width: 50px;
+  }
+}
+
+
+/* ===================================
+   SATIN BOW DECORATIONS
+=================================== */
+
+/* Shared bow styling */
+
+.satin-bow {
+  display: block;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Homepage bow with decorative lines */
+
+.bow-decoration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  margin: 0 auto 28px;
+}
+
+.hero-bow {
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.bow-line {
+  width: 90px;
+  height: 1px;
+  background-color: #d99aac;
+  flex-shrink: 1;
+}
+
+/* Bows above section headings */
+
+.section-satin-bow {
+  width: 75px;
+  max-width: 100%;
+  margin: 0 auto 24px;
+}
+
+/* Mobile */
+
+@media (max-width: 599px) {
+  .hero-bow {
+    width: 85px;
+  }
+
+  .section-satin-bow {
+    width: 60px;
+    margin-bottom: 20px;
+  }
+
+  .bow-decoration {
+    gap: 12px;
+  }
+
+  .bow-line {
+    width: 45px;
+  }
+}
+
+
+/* ===================================
+   CUSTOM PINK SATIN BOW CURSOR
+=================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .app {
+    cursor: url('/images/bow-cursor.png') 16 8, auto;
+  }
+
+  .app a,
+  .app button {
+    cursor: url('/images/bow-cursor.png') 16 8, pointer;
+  }
+
+  .app input,
+  .app textarea {
+    cursor: text;
+  }
+}
+
+
+/* ===================================
+   BOOKING FORM STYLING
+=================================== */
+
+.booking-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 35px auto 0;
+  padding: 35px;
+  background: #ffffff;
+  border: 1px solid #f3d9e2;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(76, 20, 42, 0.08);
+  text-align: left;
+}
+
+/* Form labels and fields */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 22px;
+  min-width: 0;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--burgundy);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid #e9c9d5;
+  border-radius: 12px;
+  background: var(--cream);
+  color: var(--burgundy);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--rose);
+  box-shadow: 0 0 0 3px rgba(196, 55, 112, 0.12);
+}
+
+.form-group input::placeholder {
+  color: #a88a96;
+}
+
+/* Inspiration picture upload */
+
+.upload-description {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.inspiration-input {
+  cursor: pointer;
+}
+
+.inspiration-input::file-selector-button {
+  padding: 10px 15px;
+  margin-right: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--blush);
+  color: var(--dark-rose);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Uploaded image preview */
+
+.image-preview-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.image-preview {
+  width: 100%;
+  max-width: 260px;
+  max-height: 280px;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid #f3d9e2;
+}
+
+.image-preview-note {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+/* Booking button */
+
+.booking-submit {
+  width: 100%;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* Booking confirmation note */
+
+.booking-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 20px 0 0;
+}
+
+/* Mobile booking form */
+
+@media (max-width: 599px) {
+  .booking-form {
+    padding: 24px 18px;
+    border-radius: 18px;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 14px;
+  }
+}
